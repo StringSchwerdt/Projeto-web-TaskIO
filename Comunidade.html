@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Task.io</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #47403d;
+    }
+    .post-form, .comment-form {
+      margin-bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    textarea, input {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    button {
+      background: #47403d;
+      color: white;
+      padding: 10px 15px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .post, .comment {
+      background: white;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .comment {
+      margin-left: 20px;
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Comunidade Fitness</h1>
+
+  <div class="post-form">
+    <h2>Criar novo post</h2>
+    <input type="text" id="post-title" placeholder="Título do post">
+    <textarea id="post-content" rows="4" placeholder="Conteúdo do post"></textarea>
+    <button onclick="addPost()">Postar</button>
+  </div>
+
+  <div id="posts"></div>
+
+  <script>
+    function addPost() {
+      const title = document.getElementById("post-title").value;
+      const content = document.getElementById("post-content").value;
+
+      if (title.trim() === "" || content.trim() === "") {
+        alert("Preencha o título e o conteúdo.");
+        return;
+      }
+
+      const postDiv = document.createElement("div");
+      postDiv.className = "post";
+      postDiv.innerHTML = `
+        <h3>${title}</h3>
+        <p>${content}</p>
+        <div class="comment-form">
+          <textarea rows="2" placeholder="Comente aqui..."></textarea>
+          <button onclick="addComment(this)">Comentar</button>
+        </div>
+        <div class="comments"></div>
+      `;
+
+      document.getElementById("posts").prepend(postDiv);
+
+      // Limpar campos
+      document.getElementById("post-title").value = "";
+      document.getElementById("post-content").value = "";
+    }
+
+    function addComment(button) {
+      const textarea = button.previousElementSibling;
+      const commentText = textarea.value;
+
+      if (commentText.trim() === "") {
+        alert("Comentário vazio.");
+        return;
+      }
+
+      const commentDiv = document.createElement("div");
+      commentDiv.className = "comment";
+      commentDiv.innerText = commentText;
+
+      const commentsContainer = button.parentElement.nextElementSibling;
+      commentsContainer.appendChild(commentDiv);
+
+      textarea.value = "";
+    }
+  </script>
+
+</body>
+</html>
