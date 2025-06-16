@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/iconepag.png" type="image/png+xml">
+    <title>Task.io</title>
+  </head>
+
+  <body>
+    <header>    
+      <h1>Comunidade Ambiental</h1>
+      <div class="logo"><img src="imagens/taskio.png" alt="logo"></div>
+    </header>
+    <div class="post-form">
+      <h2>Criar novo post</h2>
+      <input type="text" id="post-title" placeholder="Título do post">
+      <textarea id="post-content" rows="4" placeholder="Conteúdo do post"></textarea>
+      <button onclick="addPost()">Postar</button>
+    </div>
+    <div id="posts"></div>
+    <script src="index.js"></script>
+  </body>
+</html>

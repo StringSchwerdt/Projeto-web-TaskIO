@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0D1821;
+  font-family: 'Roboto Serif', serif;
+  color: #E0E1DD;
+}
+
+header {
+  background-color: #202636;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 60px;
+}
+
+.logo {
+  margin-bottom: -8px;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.logo img {
+  height: 200px;
+  object-fit: contain;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav button {
+  background: none;
+  border: none;
+  color: #E0E1DD;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+header nav button:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #2f3245;
+  margin-bottom: 25px;
+}
+
+.input-objetivo {
+  display: flex;
+  justify-content: space-between;
+  background-color: #72728a;
+  border-radius: 20px;
+  padding: 6px 10px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.input-objetivo input {
+  background: transparent;
+  border: none;
+  color: #E0E1DD;
+  font-family: 'Courier New', monospace;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.input-objetivo input::placeholder {
+  color: #b0b0c0;
+}
+
+#salvarObjetivo {
+  background-color: #4d5670;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#salvarObjetivo::after {
+  content: "+";
+}
+
+#listaObjetivos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#listaObjetivos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #72728a;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+#listaObjetivos input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+#listaObjetivos span {
+  flex-grow: 1;
+  text-align: left;
+  font-family: 'Courier New', monospace;
+}
+
+#listaObjetivos button {
+  background: none;
+  border: none;
+  color: #CA3838;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#listaObjetivos button::after {
+  content: "x";
+}
